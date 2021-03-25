@@ -1,8 +1,8 @@
 //! Pointer event types
 
 use super::EventTrait;
-use {AsRaw, Context, FromRaw};
 use ffi;
+use {AsRaw, Context, FromRaw};
 
 /// Common functions for all Pointer-Events implement.
 pub trait PointerEventTrait: AsRaw<ffi::libinput_event_pointer> + Context {

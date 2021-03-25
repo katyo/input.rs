@@ -1,8 +1,8 @@
 //! Gesture event types
 
 use super::EventTrait;
-use {AsRaw, Context, FromRaw};
 use ffi;
+use {AsRaw, Context, FromRaw};
 
 /// Common functions all Gesture-Events implement.
 pub trait GestureEventTrait: AsRaw<ffi::libinput_event_gesture> + Context {

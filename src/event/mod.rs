@@ -61,18 +61,21 @@ impl FromRaw<ffi::libinput_event> for Event {
         match ffi::libinput_event_get_type(event) {
             ffi::libinput_event_type_LIBINPUT_EVENT_NONE => panic!("Trying to convert null event"),
             ffi::libinput_event_type_LIBINPUT_EVENT_DEVICE_ADDED
-            | ffi::libinput_event_type_LIBINPUT_EVENT_DEVICE_REMOVED => Event::Device(
-                DeviceEvent::from_raw(ffi::libinput_event_get_device_notify_event(event), context),
-            ),
-            ffi::libinput_event_type_LIBINPUT_EVENT_KEYBOARD_KEY => Event::Keyboard(
-                KeyboardEvent::from_raw(ffi::libinput_event_get_keyboard_event(event), context),
-            ),
+            | ffi::libinput_event_type_LIBINPUT_EVENT_DEVICE_REMOVED => Event::Device(DeviceEvent::from_raw(
+                ffi::libinput_event_get_device_notify_event(event),
+                context,
+            )),
+            ffi::libinput_event_type_LIBINPUT_EVENT_KEYBOARD_KEY => Event::Keyboard(KeyboardEvent::from_raw(
+                ffi::libinput_event_get_keyboard_event(event),
+                context,
+            )),
             ffi::libinput_event_type_LIBINPUT_EVENT_POINTER_MOTION
             | ffi::libinput_event_type_LIBINPUT_EVENT_POINTER_MOTION_ABSOLUTE
             | ffi::libinput_event_type_LIBINPUT_EVENT_POINTER_BUTTON
-            | ffi::libinput_event_type_LIBINPUT_EVENT_POINTER_AXIS => Event::Pointer(
-                PointerEvent::from_raw(ffi::libinput_event_get_pointer_event(event), context),
-            ),
+            | ffi::libinput_event_type_LIBINPUT_EVENT_POINTER_AXIS => Event::Pointer(PointerEvent::from_raw(
+                ffi::libinput_event_get_pointer_event(event),
+                context,
+            )),
             ffi::libinput_event_type_LIBINPUT_EVENT_TOUCH_DOWN
             | ffi::libinput_event_type_LIBINPUT_EVENT_TOUCH_UP
             | ffi::libinput_event_type_LIBINPUT_EVENT_TOUCH_MOTION
@@ -210,8 +213,8 @@ pub mod gesture;
 pub mod keyboard;
 pub mod pointer;
 pub mod switch;
-pub mod tablet_tool;
 pub mod tablet_pad;
+pub mod tablet_tool;
 pub mod touch;
 
 pub use self::device::DeviceEvent;

@@ -1,8 +1,8 @@
 //! Touch event types
 
 use super::EventTrait;
-use {AsRaw, Context, FromRaw};
 use ffi;
+use {AsRaw, Context, FromRaw};
 
 /// Common functions all Touch-Events implement.
 pub trait TouchEventTrait: AsRaw<ffi::libinput_event_touch> + Context {

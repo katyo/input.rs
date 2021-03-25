@@ -1,8 +1,8 @@
 //! Switch event types
 
 use super::EventTrait;
-use {AsRaw, Context, FromRaw};
 use ffi;
+use {AsRaw, Context, FromRaw};
 
 /// Common functions all Switch-Events implement.
 pub trait SwitchEventTrait: AsRaw<ffi::libinput_event_switch> + Context {

@@ -1,8 +1,8 @@
 //! Keyboard event types
 
 use super::EventTrait;
-use {AsRaw, Context, FromRaw};
 use ffi;
+use {AsRaw, Context, FromRaw};
 
 /// State of a Key
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]

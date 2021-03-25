@@ -1,8 +1,8 @@
 //! Device event types
 
 use super::EventTrait;
-use {AsRaw, Context, FromRaw};
 use ffi;
+use {AsRaw, Context, FromRaw};
 
 /// Common functions all Device-Events implement.
 pub trait DeviceEventTrait: AsRaw<ffi::libinput_event_device_notify> + Context {
