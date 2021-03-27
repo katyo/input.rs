@@ -746,18 +746,12 @@ pub const libinput_event_type_LIBINPUT_EVENT_TABLET_TOOL_TIP: libinput_event_typ
 #[doc = " This event is not to be confused with the button events emitted"]
 #[doc = " by the tablet pad. See @ref LIBINPUT_EVENT_TABLET_PAD_BUTTON."]
 #[doc = ""]
-#[doc = " @see LIBINPUT_EVENT_TABLET_PAD_BUTTON"]
+#[doc = " @see LIBINPUT_EVENT_TABLET_BUTTON"]
 #[doc = ""]
 #[doc = " @since 1.2"]
 pub const libinput_event_type_LIBINPUT_EVENT_TABLET_TOOL_BUTTON: libinput_event_type = 603;
 #[doc = " A button pressed on a device with the @ref"]
 #[doc = " LIBINPUT_DEVICE_CAP_TABLET_PAD capability."]
-#[doc = ""]
-#[doc = " A button differs from @ref LIBINPUT_EVENT_TABLET_PAD_KEY in that"]
-#[doc = " buttons are sequentially indexed from 0 and do not carry any"]
-#[doc = " other information.  Keys have a specific functionality assigned"]
-#[doc = " to them. The key code thus carries a semantic meaning, a button"]
-#[doc = " number does not."]
 #[doc = ""]
 #[doc = " This event is not to be confused with the button events emitted"]
 #[doc = " by tools on a tablet (@ref LIBINPUT_EVENT_TABLET_TOOL_BUTTON)."]
@@ -774,75 +768,35 @@ pub const libinput_event_type_LIBINPUT_EVENT_TABLET_PAD_RING: libinput_event_typ
 #[doc = ""]
 #[doc = " @since 1.3"]
 pub const libinput_event_type_LIBINPUT_EVENT_TABLET_PAD_STRIP: libinput_event_type = 702;
-#[doc = " A key pressed on a device with the @ref"]
+#[doc = " A status change on a strip on a device with the @ref"]
 #[doc = " LIBINPUT_DEVICE_CAP_TABLET_PAD capability."]
 #[doc = ""]
-#[doc = " A key differs from @ref LIBINPUT_EVENT_TABLET_PAD_BUTTON in that"]
-#[doc = " keys have a specific functionality assigned to them (buttons are"]
-#[doc = " sequentially ordered). The key code thus carries a semantic"]
-#[doc = " meaning, a button number does not."]
-#[doc = ""]
-#[doc = " @since 1.15"]
-pub const libinput_event_type_LIBINPUT_EVENT_TABLET_PAD_KEY: libinput_event_type = 703;
-#[doc = " A key pressed on a device with the @ref"]
-#[doc = " LIBINPUT_DEVICE_CAP_TABLET_PAD capability."]
-#[doc = ""]
-#[doc = " A key differs from @ref LIBINPUT_EVENT_TABLET_PAD_BUTTON in that"]
-#[doc = " keys have a specific functionality assigned to them (buttons are"]
-#[doc = " sequentially ordered). The key code thus carries a semantic"]
-#[doc = " meaning, a button number does not."]
-#[doc = ""]
-#[doc = " @since 1.15"]
+#[doc = " @since 1.3"]
 pub const libinput_event_type_LIBINPUT_EVENT_GESTURE_SWIPE_BEGIN: libinput_event_type = 800;
-#[doc = " A key pressed on a device with the @ref"]
+#[doc = " A status change on a strip on a device with the @ref"]
 #[doc = " LIBINPUT_DEVICE_CAP_TABLET_PAD capability."]
 #[doc = ""]
-#[doc = " A key differs from @ref LIBINPUT_EVENT_TABLET_PAD_BUTTON in that"]
-#[doc = " keys have a specific functionality assigned to them (buttons are"]
-#[doc = " sequentially ordered). The key code thus carries a semantic"]
-#[doc = " meaning, a button number does not."]
-#[doc = ""]
-#[doc = " @since 1.15"]
+#[doc = " @since 1.3"]
 pub const libinput_event_type_LIBINPUT_EVENT_GESTURE_SWIPE_UPDATE: libinput_event_type = 801;
-#[doc = " A key pressed on a device with the @ref"]
+#[doc = " A status change on a strip on a device with the @ref"]
 #[doc = " LIBINPUT_DEVICE_CAP_TABLET_PAD capability."]
 #[doc = ""]
-#[doc = " A key differs from @ref LIBINPUT_EVENT_TABLET_PAD_BUTTON in that"]
-#[doc = " keys have a specific functionality assigned to them (buttons are"]
-#[doc = " sequentially ordered). The key code thus carries a semantic"]
-#[doc = " meaning, a button number does not."]
-#[doc = ""]
-#[doc = " @since 1.15"]
+#[doc = " @since 1.3"]
 pub const libinput_event_type_LIBINPUT_EVENT_GESTURE_SWIPE_END: libinput_event_type = 802;
-#[doc = " A key pressed on a device with the @ref"]
+#[doc = " A status change on a strip on a device with the @ref"]
 #[doc = " LIBINPUT_DEVICE_CAP_TABLET_PAD capability."]
 #[doc = ""]
-#[doc = " A key differs from @ref LIBINPUT_EVENT_TABLET_PAD_BUTTON in that"]
-#[doc = " keys have a specific functionality assigned to them (buttons are"]
-#[doc = " sequentially ordered). The key code thus carries a semantic"]
-#[doc = " meaning, a button number does not."]
-#[doc = ""]
-#[doc = " @since 1.15"]
+#[doc = " @since 1.3"]
 pub const libinput_event_type_LIBINPUT_EVENT_GESTURE_PINCH_BEGIN: libinput_event_type = 803;
-#[doc = " A key pressed on a device with the @ref"]
+#[doc = " A status change on a strip on a device with the @ref"]
 #[doc = " LIBINPUT_DEVICE_CAP_TABLET_PAD capability."]
 #[doc = ""]
-#[doc = " A key differs from @ref LIBINPUT_EVENT_TABLET_PAD_BUTTON in that"]
-#[doc = " keys have a specific functionality assigned to them (buttons are"]
-#[doc = " sequentially ordered). The key code thus carries a semantic"]
-#[doc = " meaning, a button number does not."]
-#[doc = ""]
-#[doc = " @since 1.15"]
+#[doc = " @since 1.3"]
 pub const libinput_event_type_LIBINPUT_EVENT_GESTURE_PINCH_UPDATE: libinput_event_type = 804;
-#[doc = " A key pressed on a device with the @ref"]
+#[doc = " A status change on a strip on a device with the @ref"]
 #[doc = " LIBINPUT_DEVICE_CAP_TABLET_PAD capability."]
 #[doc = ""]
-#[doc = " A key differs from @ref LIBINPUT_EVENT_TABLET_PAD_BUTTON in that"]
-#[doc = " keys have a specific functionality assigned to them (buttons are"]
-#[doc = " sequentially ordered). The key code thus carries a semantic"]
-#[doc = " meaning, a button number does not."]
-#[doc = ""]
-#[doc = " @since 1.15"]
+#[doc = " @since 1.3"]
 pub const libinput_event_type_LIBINPUT_EVENT_GESTURE_PINCH_END: libinput_event_type = 805;
 #[doc = " @since 1.7"]
 pub const libinput_event_type_LIBINPUT_EVENT_SWITCH_TOGGLE: libinput_event_type = 900;
@@ -2785,51 +2739,12 @@ extern "C" {
 extern "C" {
     #[doc = " @ingroup event_tablet_pad"]
     #[doc = ""]
-    #[doc = " Return the key code that triggered this event, e.g. KEY_CONTROLPANEL. The"]
-    #[doc = " list of key codes is defined in linux/input-event-codes.h."]
-    #[doc = ""]
-    #[doc = " For events that are not of type @ref LIBINPUT_EVENT_TABLET_PAD_KEY,"]
-    #[doc = " this function returns 0."]
-    #[doc = ""]
-    #[doc = " @note It is an application bug to call this function for events other than"]
-    #[doc = " @ref LIBINPUT_EVENT_TABLET_PAD_KEY. For other events, this function"]
-    #[doc = " returns 0."]
-    #[doc = ""]
-    #[doc = " @param event The libinput tablet pad event"]
-    #[doc = " @return the key code triggering this event"]
-    #[doc = ""]
-    #[doc = " @since 1.15"]
-    pub fn libinput_event_tablet_pad_get_key(event: *mut libinput_event_tablet_pad) -> u32;
-}
-extern "C" {
-    #[doc = " @ingroup event_tablet_pad"]
-    #[doc = ""]
-    #[doc = " Return the key state of the event."]
-    #[doc = ""]
-    #[doc = " @note It is an application bug to call this function for events other than"]
-    #[doc = " @ref LIBINPUT_EVENT_TABLET_PAD_KEY. For other events, this function"]
-    #[doc = " returns 0."]
-    #[doc = ""]
-    #[doc = " @param event The libinput tablet pad event"]
-    #[doc = " @return the key state triggering this event"]
-    #[doc = ""]
-    #[doc = " @since 1.15"]
-    pub fn libinput_event_tablet_pad_get_key_state(
-        event: *mut libinput_event_tablet_pad,
-    ) -> libinput_key_state;
-}
-extern "C" {
-    #[doc = " @ingroup event_tablet_pad"]
-    #[doc = ""]
     #[doc = " Returns the mode the button, ring, or strip that triggered this event is"]
     #[doc = " in, at the time of the event."]
     #[doc = ""]
     #[doc = " The mode is a virtual grouping of functionality, usually based on some"]
     #[doc = " visual feedback like LEDs on the pad. Mode indices start at 0, a device"]
     #[doc = " that does not support modes always returns 0."]
-    #[doc = ""]
-    #[doc = " @note Pad keys are not part of a mode group. It is an application bug to"]
-    #[doc = " call this function for @ref LIBINPUT_EVENT_TABLET_PAD_KEY."]
     #[doc = ""]
     #[doc = " Mode switching is controlled by libinput and more than one mode may exist"]
     #[doc = " on the tablet. This function returns the mode that this event's button,"]
@@ -2858,9 +2773,6 @@ extern "C" {
     #[doc = " this event is considered in. The mode is a virtual grouping of"]
     #[doc = " functionality, usually based on some visual feedback like LEDs on the"]
     #[doc = " pad."]
-    #[doc = ""]
-    #[doc = " @note Pad keys are not part of a mode group. It is an application bug to"]
-    #[doc = " call this function for @ref LIBINPUT_EVENT_TABLET_PAD_KEY."]
     #[doc = ""]
     #[doc = " The returned mode group is not refcounted and may become invalid after"]
     #[doc = " the next call to libinput. Use libinput_tablet_pad_mode_group_ref() and"]
@@ -3330,7 +3242,7 @@ pub type libinput_log_handler = ::std::option::Option<
         libinput: *mut libinput,
         priority: libinput_log_priority,
         format: *const ::libc::c_char,
-        args: *mut __va_list_tag,
+        args: va_list,
     ),
 >;
 extern "C" {
@@ -3726,7 +3638,7 @@ extern "C" {
     #[doc = " @ingroup device"]
     #[doc = ""]
     #[doc = " Check if a @ref LIBINPUT_DEVICE_CAP_POINTER device has a button with the"]
-    #[doc = " given code (see linux/input-event-codes.h)."]
+    #[doc = " given code (see linux/input.h)."]
     #[doc = ""]
     #[doc = " @param device A current input device"]
     #[doc = " @param code Button code to check for, e.g. <i>BTN_LEFT</i>"]
@@ -3739,7 +3651,7 @@ extern "C" {
     #[doc = " @ingroup device"]
     #[doc = ""]
     #[doc = " Check if a @ref LIBINPUT_DEVICE_CAP_KEYBOARD device has a key with the"]
-    #[doc = " given code (see linux/input-event-codes.h)."]
+    #[doc = " given code (see linux/input.h)."]
     #[doc = ""]
     #[doc = " @param device A current input device"]
     #[doc = " @param code Key code to check for, e.g. <i>KEY_ESC</i>"]
@@ -3824,21 +3736,6 @@ extern "C" {
     #[doc = ""]
     #[doc = " @since 1.3"]
     pub fn libinput_device_tablet_pad_get_num_strips(device: *mut libinput_device) -> ::libc::c_int;
-}
-extern "C" {
-    #[doc = " @ingroup device"]
-    #[doc = ""]
-    #[doc = " Check if a @ref LIBINPUT_DEVICE_CAP_TABLET_PAD device has a key with the"]
-    #[doc = " given code (see linux/input-event-codes.h)."]
-    #[doc = ""]
-    #[doc = " @param device A current input device"]
-    #[doc = " @param code Key code to check for, e.g. <i>KEY_ESC</i>"]
-    #[doc = ""]
-    #[doc = " @return 1 if the device supports this key code, 0 if it does not, -1"]
-    #[doc = " on error."]
-    #[doc = ""]
-    #[doc = " @since 1.15"]
-    pub fn libinput_device_tablet_pad_has_key(device: *mut libinput_device, code: u32) -> ::libc::c_int;
 }
 extern "C" {
     #[doc = " @ingroup device"]
@@ -5135,81 +5032,6 @@ extern "C" {
     #[doc = " @see libinput_device_config_scroll_get_button"]
     pub fn libinput_device_config_scroll_get_default_button(device: *mut libinput_device) -> u32;
 }
-pub const libinput_config_scroll_button_lock_state_LIBINPUT_CONFIG_SCROLL_BUTTON_LOCK_DISABLED:
-    libinput_config_scroll_button_lock_state = 0;
-pub const libinput_config_scroll_button_lock_state_LIBINPUT_CONFIG_SCROLL_BUTTON_LOCK_ENABLED:
-    libinput_config_scroll_button_lock_state = 1;
-pub type libinput_config_scroll_button_lock_state = ::libc::c_uint;
-extern "C" {
-    #[doc = " @ingroup config"]
-    #[doc = ""]
-    #[doc = " Set the scroll button lock. If the state is"]
-    #[doc = " @ref LIBINPUT_CONFIG_SCROLL_BUTTON_LOCK_DISABLED, the button must"]
-    #[doc = " physically be held down for button scrolling to work."]
-    #[doc = " If the state is"]
-    #[doc = " @ref LIBINPUT_CONFIG_SCROLL_BUTTON_LOCK_ENABLED, the button is considered"]
-    #[doc = " logically down after the first press and release sequence, and logically"]
-    #[doc = " up after the second press and release sequence."]
-    #[doc = ""]
-    #[doc = " @param device The device to configure"]
-    #[doc = " @param state The state to set the scroll button lock to"]
-    #[doc = ""]
-    #[doc = " @return A config status code. Disabling the scroll button lock on"]
-    #[doc = " device that does not support button scrolling always succeeds."]
-    #[doc = ""]
-    #[doc = " @see libinput_device_config_scroll_set_button"]
-    #[doc = " @see libinput_device_config_scroll_get_button"]
-    #[doc = " @see libinput_device_config_scroll_get_default_button"]
-    pub fn libinput_device_config_scroll_set_button_lock(
-        device: *mut libinput_device,
-        state: libinput_config_scroll_button_lock_state,
-    ) -> libinput_config_status;
-}
-extern "C" {
-    #[doc = " @ingroup config"]
-    #[doc = ""]
-    #[doc = " Get the current scroll button lock state."]
-    #[doc = ""]
-    #[doc = " If @ref LIBINPUT_CONFIG_SCROLL_ON_BUTTON_DOWN scroll method is not"]
-    #[doc = " supported, or no button is set, this function returns @ref"]
-    #[doc = " LIBINPUT_CONFIG_SCROLL_BUTTON_LOCK_DISABLED."]
-    #[doc = ""]
-    #[doc = " @note The return value is independent of the currently selected"]
-    #[doc = " scroll-method. For the scroll button lock to activate, a device must have"]
-    #[doc = " the @ref LIBINPUT_CONFIG_SCROLL_ON_BUTTON_DOWN method enabled, and a"]
-    #[doc = " non-zero button set as scroll button."]
-    #[doc = ""]
-    #[doc = " @param device The device to configure"]
-    #[doc = " @return The scroll button lock state"]
-    #[doc = ""]
-    #[doc = " @see libinput_device_config_scroll_set_button"]
-    #[doc = " @see libinput_device_config_scroll_set_button_lock"]
-    #[doc = " @see libinput_device_config_scroll_get_button_lock"]
-    #[doc = " @see libinput_device_config_scroll_get_default_button_lock"]
-    pub fn libinput_device_config_scroll_get_button_lock(
-        device: *mut libinput_device,
-    ) -> libinput_config_scroll_button_lock_state;
-}
-extern "C" {
-    #[doc = " @ingroup config"]
-    #[doc = ""]
-    #[doc = " Get the default scroll button lock state."]
-    #[doc = ""]
-    #[doc = " If @ref LIBINPUT_CONFIG_SCROLL_ON_BUTTON_DOWN scroll method is not"]
-    #[doc = " supported, or no button is set, this function returns @ref"]
-    #[doc = " LIBINPUT_CONFIG_SCROLL_BUTTON_LOCK_DISABLED."]
-    #[doc = ""]
-    #[doc = " @param device The device to configure"]
-    #[doc = " @return The default scroll button lock state"]
-    #[doc = ""]
-    #[doc = " @see libinput_device_config_scroll_set_button"]
-    #[doc = " @see libinput_device_config_scroll_set_button_lock"]
-    #[doc = " @see libinput_device_config_scroll_get_button_lock"]
-    #[doc = " @see libinput_device_config_scroll_get_default_button_lock"]
-    pub fn libinput_device_config_scroll_get_default_button_lock(
-        device: *mut libinput_device,
-    ) -> libinput_config_scroll_button_lock_state;
-}
 pub const libinput_config_dwt_state_LIBINPUT_CONFIG_DWT_DISABLED: libinput_config_dwt_state = 0;
 pub const libinput_config_dwt_state_LIBINPUT_CONFIG_DWT_ENABLED: libinput_config_dwt_state = 1;
 #[doc = " @ingroup config"]
@@ -5376,65 +5198,76 @@ extern "C" {
     #[doc = " @since 1.4"]
     pub fn libinput_device_config_rotation_get_default_angle(device: *mut libinput_device) -> ::libc::c_uint;
 }
-pub type __builtin_va_list = [__va_list_tag; 1usize];
+pub type __builtin_va_list = __va_list;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
-pub struct __va_list_tag {
-    pub gp_offset: ::libc::c_uint,
-    pub fp_offset: ::libc::c_uint,
-    pub overflow_arg_area: *mut ::libc::c_void,
-    pub reg_save_area: *mut ::libc::c_void,
+pub struct __va_list {
+    pub __stack: *mut ::libc::c_void,
+    pub __gr_top: *mut ::libc::c_void,
+    pub __vr_top: *mut ::libc::c_void,
+    pub __gr_offs: ::libc::c_int,
+    pub __vr_offs: ::libc::c_int,
 }
 #[test]
-fn bindgen_test_layout___va_list_tag() {
+fn bindgen_test_layout___va_list() {
     assert_eq!(
-        ::std::mem::size_of::<__va_list_tag>(),
-        24usize,
-        concat!("Size of: ", stringify!(__va_list_tag))
+        ::std::mem::size_of::<__va_list>(),
+        32usize,
+        concat!("Size of: ", stringify!(__va_list))
     );
     assert_eq!(
-        ::std::mem::align_of::<__va_list_tag>(),
+        ::std::mem::align_of::<__va_list>(),
         8usize,
-        concat!("Alignment of ", stringify!(__va_list_tag))
+        concat!("Alignment of ", stringify!(__va_list))
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<__va_list_tag>())).gp_offset as *const _ as usize },
+        unsafe { &(*(::std::ptr::null::<__va_list>())).__stack as *const _ as usize },
         0usize,
         concat!(
             "Offset of field: ",
-            stringify!(__va_list_tag),
+            stringify!(__va_list),
             "::",
-            stringify!(gp_offset)
+            stringify!(__stack)
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<__va_list_tag>())).fp_offset as *const _ as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(__va_list_tag),
-            "::",
-            stringify!(fp_offset)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<__va_list_tag>())).overflow_arg_area as *const _ as usize },
+        unsafe { &(*(::std::ptr::null::<__va_list>())).__gr_top as *const _ as usize },
         8usize,
         concat!(
             "Offset of field: ",
-            stringify!(__va_list_tag),
+            stringify!(__va_list),
             "::",
-            stringify!(overflow_arg_area)
+            stringify!(__gr_top)
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<__va_list_tag>())).reg_save_area as *const _ as usize },
+        unsafe { &(*(::std::ptr::null::<__va_list>())).__vr_top as *const _ as usize },
         16usize,
         concat!(
             "Offset of field: ",
-            stringify!(__va_list_tag),
+            stringify!(__va_list),
             "::",
-            stringify!(reg_save_area)
+            stringify!(__vr_top)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<__va_list>())).__gr_offs as *const _ as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(__va_list),
+            "::",
+            stringify!(__gr_offs)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<__va_list>())).__vr_offs as *const _ as usize },
+        28usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(__va_list),
+            "::",
+            stringify!(__vr_offs)
         )
     );
 }

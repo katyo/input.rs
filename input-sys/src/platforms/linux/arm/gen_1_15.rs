@@ -2,7 +2,7 @@
 
 pub type __int32_t = ::libc::c_int;
 pub type __uint32_t = ::libc::c_uint;
-pub type __uint64_t = ::libc::c_ulong;
+pub type __uint64_t = ::libc::c_ulonglong;
 pub type va_list = __builtin_va_list;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -3006,12 +3006,12 @@ pub struct libinput_interface {
 fn bindgen_test_layout_libinput_interface() {
     assert_eq!(
         ::std::mem::size_of::<libinput_interface>(),
-        16usize,
+        8usize,
         concat!("Size of: ", stringify!(libinput_interface))
     );
     assert_eq!(
         ::std::mem::align_of::<libinput_interface>(),
-        8usize,
+        4usize,
         concat!("Alignment of ", stringify!(libinput_interface))
     );
     assert_eq!(
@@ -3026,7 +3026,7 @@ fn bindgen_test_layout_libinput_interface() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<libinput_interface>())).close_restricted as *const _ as usize },
-        8usize,
+        4usize,
         concat!(
             "Offset of field: ",
             stringify!(libinput_interface),
@@ -3330,7 +3330,7 @@ pub type libinput_log_handler = ::std::option::Option<
         libinput: *mut libinput,
         priority: libinput_log_priority,
         format: *const ::libc::c_char,
-        args: *mut __va_list_tag,
+        args: va_list,
     ),
 >;
 extern "C" {
@@ -5376,65 +5376,27 @@ extern "C" {
     #[doc = " @since 1.4"]
     pub fn libinput_device_config_rotation_get_default_angle(device: *mut libinput_device) -> ::libc::c_uint;
 }
-pub type __builtin_va_list = [__va_list_tag; 1usize];
+pub type __builtin_va_list = __va_list;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
-pub struct __va_list_tag {
-    pub gp_offset: ::libc::c_uint,
-    pub fp_offset: ::libc::c_uint,
-    pub overflow_arg_area: *mut ::libc::c_void,
-    pub reg_save_area: *mut ::libc::c_void,
+pub struct __va_list {
+    pub __ap: *mut ::libc::c_void,
 }
 #[test]
-fn bindgen_test_layout___va_list_tag() {
+fn bindgen_test_layout___va_list() {
     assert_eq!(
-        ::std::mem::size_of::<__va_list_tag>(),
-        24usize,
-        concat!("Size of: ", stringify!(__va_list_tag))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<__va_list_tag>(),
-        8usize,
-        concat!("Alignment of ", stringify!(__va_list_tag))
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<__va_list_tag>())).gp_offset as *const _ as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(__va_list_tag),
-            "::",
-            stringify!(gp_offset)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<__va_list_tag>())).fp_offset as *const _ as usize },
+        ::std::mem::size_of::<__va_list>(),
         4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(__va_list_tag),
-            "::",
-            stringify!(fp_offset)
-        )
+        concat!("Size of: ", stringify!(__va_list))
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<__va_list_tag>())).overflow_arg_area as *const _ as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(__va_list_tag),
-            "::",
-            stringify!(overflow_arg_area)
-        )
+        ::std::mem::align_of::<__va_list>(),
+        4usize,
+        concat!("Alignment of ", stringify!(__va_list))
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<__va_list_tag>())).reg_save_area as *const _ as usize },
-        16usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(__va_list_tag),
-            "::",
-            stringify!(reg_save_area)
-        )
+        unsafe { &(*(::std::ptr::null::<__va_list>())).__ap as *const _ as usize },
+        0usize,
+        concat!("Offset of field: ", stringify!(__va_list), "::", stringify!(__ap))
     );
 }
