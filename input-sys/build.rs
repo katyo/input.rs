@@ -60,7 +60,6 @@ fn main() {
             .ctypes_prefix("::libc")
             .whitelist_type(r"^libinput_.*$")
             .whitelist_function(r"^libinput_.*$")
-            .rustfmt_bindings(false)
             .generate()
             .unwrap();
 
