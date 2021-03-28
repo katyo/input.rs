@@ -13,8 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          submodules: true
       - name: Setup Rust
         uses: actions-rs/toolchain@v1
         with:
@@ -40,8 +38,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          submodules: true
       - run: sudo apt-get install -y libudev-dev
       - name: Setup Rust
         uses: actions-rs/toolchain@v1
@@ -69,8 +65,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-        with:
-          submodules: true
       - run: sudo apt-get install -y libudev-dev
       - uses: actions-rs/toolchain@v1
         with:
@@ -142,8 +136,6 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
-        with:
-          submodules: true
       - name: Setup linux toolchain
         if: contains(matrix.target, '-linux-') && startsWith(matrix.target, 'x86_64-')
         run: |
@@ -273,8 +265,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          submodules: true
       - name: Setup Rust
         uses: actions-rs/toolchain@v1
         with:
