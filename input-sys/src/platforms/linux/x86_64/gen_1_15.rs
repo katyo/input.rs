@@ -169,7 +169,8 @@ pub type libinput_log_priority = ::libc::c_uint;
 pub const libinput_device_capability_LIBINPUT_DEVICE_CAP_KEYBOARD: libinput_device_capability = 0;
 pub const libinput_device_capability_LIBINPUT_DEVICE_CAP_POINTER: libinput_device_capability = 1;
 pub const libinput_device_capability_LIBINPUT_DEVICE_CAP_TOUCH: libinput_device_capability = 2;
-pub const libinput_device_capability_LIBINPUT_DEVICE_CAP_TABLET_TOOL: libinput_device_capability = 3;
+pub const libinput_device_capability_LIBINPUT_DEVICE_CAP_TABLET_TOOL: libinput_device_capability =
+    3;
 pub const libinput_device_capability_LIBINPUT_DEVICE_CAP_TABLET_PAD: libinput_device_capability = 4;
 pub const libinput_device_capability_LIBINPUT_DEVICE_CAP_GESTURE: libinput_device_capability = 5;
 pub const libinput_device_capability_LIBINPUT_DEVICE_CAP_SWITCH: libinput_device_capability = 6;
@@ -213,18 +214,20 @@ pub const libinput_pointer_axis_LIBINPUT_POINTER_AXIS_SCROLL_HORIZONTAL: libinpu
 #[doc = " appropriate in the current interaction"]
 pub type libinput_pointer_axis = ::libc::c_uint;
 #[doc = " The event is caused by the rotation of a wheel."]
-pub const libinput_pointer_axis_source_LIBINPUT_POINTER_AXIS_SOURCE_WHEEL: libinput_pointer_axis_source = 1;
+pub const libinput_pointer_axis_source_LIBINPUT_POINTER_AXIS_SOURCE_WHEEL:
+    libinput_pointer_axis_source = 1;
 #[doc = " The event is caused by the movement of one or more fingers on a"]
 #[doc = " device."]
-pub const libinput_pointer_axis_source_LIBINPUT_POINTER_AXIS_SOURCE_FINGER: libinput_pointer_axis_source = 2;
+pub const libinput_pointer_axis_source_LIBINPUT_POINTER_AXIS_SOURCE_FINGER:
+    libinput_pointer_axis_source = 2;
 #[doc = " The event is caused by the motion of some device."]
-pub const libinput_pointer_axis_source_LIBINPUT_POINTER_AXIS_SOURCE_CONTINUOUS: libinput_pointer_axis_source =
-    3;
+pub const libinput_pointer_axis_source_LIBINPUT_POINTER_AXIS_SOURCE_CONTINUOUS:
+    libinput_pointer_axis_source = 3;
 #[doc = " The event is caused by the tilting of a mouse wheel rather than"]
 #[doc = " its rotation. This method is commonly used on mice without"]
 #[doc = " separate horizontal scroll wheels."]
-pub const libinput_pointer_axis_source_LIBINPUT_POINTER_AXIS_SOURCE_WHEEL_TILT: libinput_pointer_axis_source =
-    4;
+pub const libinput_pointer_axis_source_LIBINPUT_POINTER_AXIS_SOURCE_WHEEL_TILT:
+    libinput_pointer_axis_source = 4;
 #[doc = " @ingroup device"]
 #[doc = ""]
 #[doc = " The source for a libinput_pointer_axis event. See"]
@@ -266,7 +269,8 @@ pub const libinput_tablet_tool_type_LIBINPUT_TABLET_TOOL_TYPE_BRUSH: libinput_ta
 #[doc = "Wacom Inking Pen"]
 pub const libinput_tablet_tool_type_LIBINPUT_TABLET_TOOL_TYPE_PENCIL: libinput_tablet_tool_type = 4;
 #[doc = "< An airbrush-like tool"]
-pub const libinput_tablet_tool_type_LIBINPUT_TABLET_TOOL_TYPE_AIRBRUSH: libinput_tablet_tool_type = 5;
+pub const libinput_tablet_tool_type_LIBINPUT_TABLET_TOOL_TYPE_AIRBRUSH: libinput_tablet_tool_type =
+    5;
 #[doc = "< A mouse bound to the tablet"]
 pub const libinput_tablet_tool_type_LIBINPUT_TABLET_TOOL_TYPE_MOUSE: libinput_tablet_tool_type = 6;
 #[doc = "< A mouse tool with a lens"]
@@ -315,8 +319,10 @@ pub const libinput_tablet_tool_proximity_state_LIBINPUT_TABLET_TOOL_PROXIMITY_ST
 #[doc = ""]
 #[doc = " @since 1.2"]
 pub type libinput_tablet_tool_proximity_state = ::libc::c_uint;
-pub const libinput_tablet_tool_tip_state_LIBINPUT_TABLET_TOOL_TIP_UP: libinput_tablet_tool_tip_state = 0;
-pub const libinput_tablet_tool_tip_state_LIBINPUT_TABLET_TOOL_TIP_DOWN: libinput_tablet_tool_tip_state = 1;
+pub const libinput_tablet_tool_tip_state_LIBINPUT_TABLET_TOOL_TIP_UP:
+    libinput_tablet_tool_tip_state = 0;
+pub const libinput_tablet_tool_tip_state_LIBINPUT_TABLET_TOOL_TIP_DOWN:
+    libinput_tablet_tool_tip_state = 1;
 #[doc = " @ingroup device"]
 #[doc = ""]
 #[doc = " The tip contact state for a tool on a device. The device must have"]
@@ -364,7 +370,9 @@ extern "C" {
     #[doc = " @return the number of mode groups available on this device"]
     #[doc = ""]
     #[doc = " @since 1.4"]
-    pub fn libinput_device_tablet_pad_get_num_mode_groups(device: *mut libinput_device) -> ::libc::c_int;
+    pub fn libinput_device_tablet_pad_get_num_mode_groups(
+        device: *mut libinput_device,
+    ) -> ::libc::c_int;
 }
 extern "C" {
     #[doc = " @ingroup tablet_pad_modes"]
@@ -902,7 +910,9 @@ extern "C" {
     #[doc = " The inverse of this function is libinput_event_pointer_get_base_event()."]
     #[doc = ""]
     #[doc = " @return A pointer event, or NULL for other events"]
-    pub fn libinput_event_get_pointer_event(event: *mut libinput_event) -> *mut libinput_event_pointer;
+    pub fn libinput_event_get_pointer_event(
+        event: *mut libinput_event,
+    ) -> *mut libinput_event_pointer;
 }
 extern "C" {
     #[doc = " @ingroup event"]
@@ -913,7 +923,9 @@ extern "C" {
     #[doc = " The inverse of this function is libinput_event_keyboard_get_base_event()."]
     #[doc = ""]
     #[doc = " @return A keyboard event, or NULL for other events"]
-    pub fn libinput_event_get_keyboard_event(event: *mut libinput_event) -> *mut libinput_event_keyboard;
+    pub fn libinput_event_get_keyboard_event(
+        event: *mut libinput_event,
+    ) -> *mut libinput_event_keyboard;
 }
 extern "C" {
     #[doc = " @ingroup event"]
@@ -947,7 +959,9 @@ extern "C" {
     #[doc = " The inverse of this function is libinput_event_gesture_get_base_event()."]
     #[doc = ""]
     #[doc = " @return A gesture event, or NULL for other events"]
-    pub fn libinput_event_get_gesture_event(event: *mut libinput_event) -> *mut libinput_event_gesture;
+    pub fn libinput_event_get_gesture_event(
+        event: *mut libinput_event,
+    ) -> *mut libinput_event_gesture;
 }
 extern "C" {
     #[doc = " @ingroup event"]
@@ -973,7 +987,9 @@ extern "C" {
     #[doc = " The inverse of this function is libinput_event_tablet_pad_get_base_event()."]
     #[doc = ""]
     #[doc = " @return A tablet pad event, or NULL for other events"]
-    pub fn libinput_event_get_tablet_pad_event(event: *mut libinput_event) -> *mut libinput_event_tablet_pad;
+    pub fn libinput_event_get_tablet_pad_event(
+        event: *mut libinput_event,
+    ) -> *mut libinput_event_tablet_pad;
 }
 extern "C" {
     #[doc = " @ingroup event"]
@@ -986,7 +1002,9 @@ extern "C" {
     #[doc = " @return A switch event, or NULL for other events"]
     #[doc = ""]
     #[doc = " @since 1.7"]
-    pub fn libinput_event_get_switch_event(event: *mut libinput_event) -> *mut libinput_event_switch;
+    pub fn libinput_event_get_switch_event(
+        event: *mut libinput_event,
+    ) -> *mut libinput_event_switch;
 }
 extern "C" {
     #[doc = " @ingroup event"]
@@ -1038,14 +1056,17 @@ extern "C" {
     #[doc = " @ingroup event_keyboard"]
     #[doc = ""]
     #[doc = " @return The state change of the key"]
-    pub fn libinput_event_keyboard_get_key_state(event: *mut libinput_event_keyboard) -> libinput_key_state;
+    pub fn libinput_event_keyboard_get_key_state(
+        event: *mut libinput_event_keyboard,
+    ) -> libinput_key_state;
 }
 extern "C" {
     #[doc = " @ingroup event_keyboard"]
     #[doc = ""]
     #[doc = " @return The generic libinput_event of this event"]
-    pub fn libinput_event_keyboard_get_base_event(event: *mut libinput_event_keyboard)
-        -> *mut libinput_event;
+    pub fn libinput_event_keyboard_get_base_event(
+        event: *mut libinput_event_keyboard,
+    ) -> *mut libinput_event;
 }
 extern "C" {
     #[doc = " @ingroup event_keyboard"]
@@ -1396,7 +1417,9 @@ extern "C" {
     #[doc = " @ingroup event_pointer"]
     #[doc = ""]
     #[doc = " @return The generic libinput_event of this event"]
-    pub fn libinput_event_pointer_get_base_event(event: *mut libinput_event_pointer) -> *mut libinput_event;
+    pub fn libinput_event_pointer_get_base_event(
+        event: *mut libinput_event_pointer,
+    ) -> *mut libinput_event;
 }
 extern "C" {
     #[doc = " @ingroup event_touch"]
@@ -1508,7 +1531,10 @@ extern "C" {
     #[doc = " @param event The libinput touch event"]
     #[doc = " @param width The current output screen width"]
     #[doc = " @return The current absolute x coordinate transformed to a screen coordinate"]
-    pub fn libinput_event_touch_get_x_transformed(event: *mut libinput_event_touch, width: u32) -> f64;
+    pub fn libinput_event_touch_get_x_transformed(
+        event: *mut libinput_event_touch,
+        width: u32,
+    ) -> f64;
 }
 extern "C" {
     #[doc = " @ingroup event_touch"]
@@ -1526,13 +1552,18 @@ extern "C" {
     #[doc = " @param event The libinput touch event"]
     #[doc = " @param height The current output screen height"]
     #[doc = " @return The current absolute y coordinate transformed to a screen coordinate"]
-    pub fn libinput_event_touch_get_y_transformed(event: *mut libinput_event_touch, height: u32) -> f64;
+    pub fn libinput_event_touch_get_y_transformed(
+        event: *mut libinput_event_touch,
+        height: u32,
+    ) -> f64;
 }
 extern "C" {
     #[doc = " @ingroup event_touch"]
     #[doc = ""]
     #[doc = " @return The generic libinput_event of this event"]
-    pub fn libinput_event_touch_get_base_event(event: *mut libinput_event_touch) -> *mut libinput_event;
+    pub fn libinput_event_touch_get_base_event(
+        event: *mut libinput_event_touch,
+    ) -> *mut libinput_event;
 }
 extern "C" {
     #[doc = " @ingroup event_gesture"]
@@ -1556,7 +1587,9 @@ extern "C" {
     #[doc = " @ingroup event_gesture"]
     #[doc = ""]
     #[doc = " @return The generic libinput_event of this event"]
-    pub fn libinput_event_gesture_get_base_event(event: *mut libinput_event_gesture) -> *mut libinput_event;
+    pub fn libinput_event_gesture_get_base_event(
+        event: *mut libinput_event_gesture,
+    ) -> *mut libinput_event;
 }
 extern "C" {
     #[doc = " @ingroup event_gesture"]
@@ -1572,7 +1605,9 @@ extern "C" {
     #[doc = " semantically identical and continue the two gestures as one single gesture."]
     #[doc = ""]
     #[doc = " @return the number of fingers used for a gesture"]
-    pub fn libinput_event_gesture_get_finger_count(event: *mut libinput_event_gesture) -> ::libc::c_int;
+    pub fn libinput_event_gesture_get_finger_count(
+        event: *mut libinput_event_gesture,
+    ) -> ::libc::c_int;
 }
 extern "C" {
     #[doc = " @ingroup event_gesture"]
@@ -1587,7 +1622,9 @@ extern "C" {
     #[doc = " @ref LIBINPUT_EVENT_GESTURE_PINCH_END."]
     #[doc = ""]
     #[doc = " @return 0 or 1, with 1 indicating that the gesture was cancelled."]
-    pub fn libinput_event_gesture_get_cancelled(event: *mut libinput_event_gesture) -> ::libc::c_int;
+    pub fn libinput_event_gesture_get_cancelled(
+        event: *mut libinput_event_gesture,
+    ) -> ::libc::c_int;
 }
 extern "C" {
     #[doc = " @ingroup event_gesture"]
@@ -1736,7 +1773,9 @@ extern "C" {
     #[doc = " @return 1 if the axis was updated or 0 otherwise"]
     #[doc = ""]
     #[doc = " @since 1.2"]
-    pub fn libinput_event_tablet_tool_x_has_changed(event: *mut libinput_event_tablet_tool) -> ::libc::c_int;
+    pub fn libinput_event_tablet_tool_x_has_changed(
+        event: *mut libinput_event_tablet_tool,
+    ) -> ::libc::c_int;
 }
 extern "C" {
     #[doc = " @ingroup event_tablet"]
@@ -1756,7 +1795,9 @@ extern "C" {
     #[doc = " @return 1 if the axis was updated or 0 otherwise"]
     #[doc = ""]
     #[doc = " @since 1.2"]
-    pub fn libinput_event_tablet_tool_y_has_changed(event: *mut libinput_event_tablet_tool) -> ::libc::c_int;
+    pub fn libinput_event_tablet_tool_y_has_changed(
+        event: *mut libinput_event_tablet_tool,
+    ) -> ::libc::c_int;
 }
 extern "C" {
     #[doc = " @ingroup event_tablet"]
@@ -2120,7 +2161,9 @@ extern "C" {
     #[doc = " @return The current value of the the axis"]
     #[doc = ""]
     #[doc = " @since 1.2"]
-    pub fn libinput_event_tablet_tool_get_slider_position(event: *mut libinput_event_tablet_tool) -> f64;
+    pub fn libinput_event_tablet_tool_get_slider_position(
+        event: *mut libinput_event_tablet_tool,
+    ) -> f64;
 }
 extern "C" {
     #[doc = " @ingroup event_tablet"]
@@ -2136,7 +2179,8 @@ extern "C" {
     #[doc = ""]
     #[doc = " @param event The libinput tablet tool event"]
     #[doc = " @return The current value of the axis major in mm"]
-    pub fn libinput_event_tablet_tool_get_size_major(event: *mut libinput_event_tablet_tool) -> f64;
+    pub fn libinput_event_tablet_tool_get_size_major(event: *mut libinput_event_tablet_tool)
+        -> f64;
 }
 extern "C" {
     #[doc = " @ingroup event_tablet"]
@@ -2152,7 +2196,8 @@ extern "C" {
     #[doc = ""]
     #[doc = " @param event The libinput tablet tool event"]
     #[doc = " @return The current value of the axis minor in mm"]
-    pub fn libinput_event_tablet_tool_get_size_minor(event: *mut libinput_event_tablet_tool) -> f64;
+    pub fn libinput_event_tablet_tool_get_size_minor(event: *mut libinput_event_tablet_tool)
+        -> f64;
 }
 extern "C" {
     #[doc = " @ingroup event_tablet"]
@@ -2163,7 +2208,9 @@ extern "C" {
     #[doc = " @return The delta of the wheel, in degrees, compared to the last event"]
     #[doc = ""]
     #[doc = " @see libinput_event_tablet_tool_get_wheel_delta_discrete"]
-    pub fn libinput_event_tablet_tool_get_wheel_delta(event: *mut libinput_event_tablet_tool) -> f64;
+    pub fn libinput_event_tablet_tool_get_wheel_delta(
+        event: *mut libinput_event_tablet_tool,
+    ) -> f64;
 }
 extern "C" {
     #[doc = " @ingroup event_tablet"]
@@ -2341,7 +2388,9 @@ extern "C" {
     #[doc = " @return the seat wide pressed button count for the key of this event"]
     #[doc = ""]
     #[doc = " @since 1.2"]
-    pub fn libinput_event_tablet_tool_get_seat_button_count(event: *mut libinput_event_tablet_tool) -> u32;
+    pub fn libinput_event_tablet_tool_get_seat_button_count(
+        event: *mut libinput_event_tablet_tool,
+    ) -> u32;
 }
 extern "C" {
     #[doc = " @ingroup event_tablet"]
@@ -2389,7 +2438,9 @@ extern "C" {
     #[doc = " @see libinput_tablet_tool_get_tool_id"]
     #[doc = ""]
     #[doc = " @since 1.2"]
-    pub fn libinput_tablet_tool_get_type(tool: *mut libinput_tablet_tool) -> libinput_tablet_tool_type;
+    pub fn libinput_tablet_tool_get_type(
+        tool: *mut libinput_tablet_tool,
+    ) -> libinput_tablet_tool_type;
 }
 extern "C" {
     #[doc = " @ingroup event_tablet"]
@@ -2438,7 +2489,8 @@ extern "C" {
     #[doc = " @see libinput_tablet_tool_ref"]
     #[doc = ""]
     #[doc = " @since 1.2"]
-    pub fn libinput_tablet_tool_unref(tool: *mut libinput_tablet_tool) -> *mut libinput_tablet_tool;
+    pub fn libinput_tablet_tool_unref(tool: *mut libinput_tablet_tool)
+        -> *mut libinput_tablet_tool;
 }
 extern "C" {
     #[doc = " @ingroup event_tablet"]
@@ -2530,7 +2582,10 @@ extern "C" {
     #[doc = " @return 1 if the tool supports this button code, 0 if it does not"]
     #[doc = ""]
     #[doc = " @since 1.2"]
-    pub fn libinput_tablet_tool_has_button(tool: *mut libinput_tablet_tool, code: u32) -> ::libc::c_int;
+    pub fn libinput_tablet_tool_has_button(
+        tool: *mut libinput_tablet_tool,
+        code: u32,
+    ) -> ::libc::c_int;
 }
 extern "C" {
     #[doc = " @ingroup event_tablet"]
@@ -2597,7 +2652,9 @@ extern "C" {
     #[doc = " @return The user data associated with the tool object"]
     #[doc = ""]
     #[doc = " @since 1.2"]
-    pub fn libinput_tablet_tool_get_user_data(tool: *mut libinput_tablet_tool) -> *mut ::libc::c_void;
+    pub fn libinput_tablet_tool_get_user_data(
+        tool: *mut libinput_tablet_tool,
+    ) -> *mut ::libc::c_void;
 }
 extern "C" {
     #[doc = " @ingroup event_tablet"]
@@ -2644,7 +2701,9 @@ extern "C" {
     #[doc = " @retval -1 The finger was lifted"]
     #[doc = ""]
     #[doc = " @since 1.3"]
-    pub fn libinput_event_tablet_pad_get_ring_position(event: *mut libinput_event_tablet_pad) -> f64;
+    pub fn libinput_event_tablet_pad_get_ring_position(
+        event: *mut libinput_event_tablet_pad,
+    ) -> f64;
 }
 extern "C" {
     #[doc = " @ingroup event_tablet_pad"]
@@ -2661,8 +2720,9 @@ extern "C" {
     #[doc = " @return The index of the ring that changed state"]
     #[doc = ""]
     #[doc = " @since 1.3"]
-    pub fn libinput_event_tablet_pad_get_ring_number(event: *mut libinput_event_tablet_pad)
-        -> ::libc::c_uint;
+    pub fn libinput_event_tablet_pad_get_ring_number(
+        event: *mut libinput_event_tablet_pad,
+    ) -> ::libc::c_uint;
 }
 extern "C" {
     #[doc = " @ingroup event_tablet_pad"]
@@ -2704,7 +2764,9 @@ extern "C" {
     #[doc = " @retval -1 The finger was lifted"]
     #[doc = ""]
     #[doc = " @since 1.3"]
-    pub fn libinput_event_tablet_pad_get_strip_position(event: *mut libinput_event_tablet_pad) -> f64;
+    pub fn libinput_event_tablet_pad_get_strip_position(
+        event: *mut libinput_event_tablet_pad,
+    ) -> f64;
 }
 extern "C" {
     #[doc = " @ingroup event_tablet_pad"]
@@ -2763,7 +2825,9 @@ extern "C" {
     #[doc = " @return the button triggering this event"]
     #[doc = ""]
     #[doc = " @since 1.3"]
-    pub fn libinput_event_tablet_pad_get_button_number(event: *mut libinput_event_tablet_pad) -> u32;
+    pub fn libinput_event_tablet_pad_get_button_number(
+        event: *mut libinput_event_tablet_pad,
+    ) -> u32;
 }
 extern "C" {
     #[doc = " @ingroup event_tablet_pad"]
@@ -2849,7 +2913,9 @@ extern "C" {
     #[doc = " @see libinput_tablet_pad_mode_group_get_mode"]
     #[doc = ""]
     #[doc = " @since 1.4"]
-    pub fn libinput_event_tablet_pad_get_mode(event: *mut libinput_event_tablet_pad) -> ::libc::c_uint;
+    pub fn libinput_event_tablet_pad_get_mode(
+        event: *mut libinput_event_tablet_pad,
+    ) -> ::libc::c_uint;
 }
 extern "C" {
     #[doc = " @ingroup event_tablet_pad"]
@@ -2931,8 +2997,9 @@ extern "C" {
     #[doc = " @return The switch state triggering this event"]
     #[doc = ""]
     #[doc = " @since 1.7"]
-    pub fn libinput_event_switch_get_switch_state(event: *mut libinput_event_switch)
-        -> libinput_switch_state;
+    pub fn libinput_event_switch_get_switch_state(
+        event: *mut libinput_event_switch,
+    ) -> libinput_switch_state;
 }
 extern "C" {
     #[doc = " @ingroup event_switch"]
@@ -2940,7 +3007,9 @@ extern "C" {
     #[doc = " @return The generic libinput_event of this event"]
     #[doc = ""]
     #[doc = " @since 1.7"]
-    pub fn libinput_event_switch_get_base_event(event: *mut libinput_event_switch) -> *mut libinput_event;
+    pub fn libinput_event_switch_get_base_event(
+        event: *mut libinput_event_switch,
+    ) -> *mut libinput_event;
 }
 extern "C" {
     #[doc = " @ingroup event_switch"]
@@ -2999,8 +3068,9 @@ pub struct libinput_interface {
     #[doc = " @param fd The file descriptor to close"]
     #[doc = " @param user_data The user_data provided in"]
     #[doc = " libinput_udev_create_context()"]
-    pub close_restricted:
-        ::std::option::Option<unsafe extern "C" fn(fd: ::libc::c_int, user_data: *mut ::libc::c_void)>,
+    pub close_restricted: ::std::option::Option<
+        unsafe extern "C" fn(fd: ::libc::c_int, user_data: *mut ::libc::c_void),
+    >,
 }
 #[test]
 fn bindgen_test_layout_libinput_interface() {
@@ -3015,7 +3085,9 @@ fn bindgen_test_layout_libinput_interface() {
         concat!("Alignment of ", stringify!(libinput_interface))
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<libinput_interface>())).open_restricted as *const _ as usize },
+        unsafe {
+            &(*(::std::ptr::null::<libinput_interface>())).open_restricted as *const _ as usize
+        },
         0usize,
         concat!(
             "Offset of field: ",
@@ -3025,7 +3097,9 @@ fn bindgen_test_layout_libinput_interface() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<libinput_interface>())).close_restricted as *const _ as usize },
+        unsafe {
+            &(*(::std::ptr::null::<libinput_interface>())).close_restricted as *const _ as usize
+        },
         8usize,
         concat!(
             "Offset of field: ",
@@ -3465,7 +3539,10 @@ extern "C" {
     #[doc = " @param device A previously obtained device"]
     #[doc = " @param user_data Caller-specific data pointer"]
     #[doc = " @see libinput_device_get_user_data"]
-    pub fn libinput_device_set_user_data(device: *mut libinput_device, user_data: *mut ::libc::c_void);
+    pub fn libinput_device_set_user_data(
+        device: *mut libinput_device,
+        user_data: *mut ::libc::c_void,
+    );
 }
 extern "C" {
     #[doc = " @ingroup device"]
@@ -3545,7 +3622,9 @@ extern "C" {
     #[doc = " property, see the libinput documentation for more details."]
     #[doc = ""]
     #[doc = " @return The device group this device belongs to"]
-    pub fn libinput_device_get_device_group(device: *mut libinput_device) -> *mut libinput_device_group;
+    pub fn libinput_device_get_device_group(
+        device: *mut libinput_device,
+    ) -> *mut libinput_device_group;
 }
 extern "C" {
     #[doc = " @ingroup device"]
@@ -3733,7 +3812,10 @@ extern "C" {
     #[doc = ""]
     #[doc = " @return 1 if the device supports this button code, 0 if it does not, -1"]
     #[doc = " on error."]
-    pub fn libinput_device_pointer_has_button(device: *mut libinput_device, code: u32) -> ::libc::c_int;
+    pub fn libinput_device_pointer_has_button(
+        device: *mut libinput_device,
+        code: u32,
+    ) -> ::libc::c_int;
 }
 extern "C" {
     #[doc = " @ingroup device"]
@@ -3746,7 +3828,10 @@ extern "C" {
     #[doc = ""]
     #[doc = " @return 1 if the device supports this key code, 0 if it does not, -1"]
     #[doc = " on error."]
-    pub fn libinput_device_keyboard_has_key(device: *mut libinput_device, code: u32) -> ::libc::c_int;
+    pub fn libinput_device_keyboard_has_key(
+        device: *mut libinput_device,
+        code: u32,
+    ) -> ::libc::c_int;
 }
 extern "C" {
     #[doc = " @ingroup device"]
@@ -3793,7 +3878,9 @@ extern "C" {
     #[doc = " @return The number of buttons supported by the device."]
     #[doc = ""]
     #[doc = " @since 1.3"]
-    pub fn libinput_device_tablet_pad_get_num_buttons(device: *mut libinput_device) -> ::libc::c_int;
+    pub fn libinput_device_tablet_pad_get_num_buttons(
+        device: *mut libinput_device,
+    ) -> ::libc::c_int;
 }
 extern "C" {
     #[doc = " @ingroup device"]
@@ -3823,7 +3910,8 @@ extern "C" {
     #[doc = " @see libinput_event_tablet_pad_get_strip_number"]
     #[doc = ""]
     #[doc = " @since 1.3"]
-    pub fn libinput_device_tablet_pad_get_num_strips(device: *mut libinput_device) -> ::libc::c_int;
+    pub fn libinput_device_tablet_pad_get_num_strips(device: *mut libinput_device)
+        -> ::libc::c_int;
 }
 extern "C" {
     #[doc = " @ingroup device"]
@@ -3838,7 +3926,10 @@ extern "C" {
     #[doc = " on error."]
     #[doc = ""]
     #[doc = " @since 1.15"]
-    pub fn libinput_device_tablet_pad_has_key(device: *mut libinput_device, code: u32) -> ::libc::c_int;
+    pub fn libinput_device_tablet_pad_has_key(
+        device: *mut libinput_device,
+        code: u32,
+    ) -> ::libc::c_int;
 }
 extern "C" {
     #[doc = " @ingroup device"]
@@ -3851,7 +3942,9 @@ extern "C" {
     #[doc = ""]
     #[doc = " @param group A previously obtained device group"]
     #[doc = " @return The passed device group"]
-    pub fn libinput_device_group_ref(group: *mut libinput_device_group) -> *mut libinput_device_group;
+    pub fn libinput_device_group_ref(
+        group: *mut libinput_device_group,
+    ) -> *mut libinput_device_group;
 }
 extern "C" {
     #[doc = " @ingroup device"]
@@ -3865,7 +3958,9 @@ extern "C" {
     #[doc = " @param group A previously obtained device group"]
     #[doc = " @return NULL if the device group was destroyed, otherwise the passed"]
     #[doc = " device group"]
-    pub fn libinput_device_group_unref(group: *mut libinput_device_group) -> *mut libinput_device_group;
+    pub fn libinput_device_group_unref(
+        group: *mut libinput_device_group,
+    ) -> *mut libinput_device_group;
 }
 extern "C" {
     #[doc = " @ingroup device"]
@@ -3891,7 +3986,9 @@ extern "C" {
     #[doc = " @param group A previously obtained group"]
     #[doc = " @return Caller-specific data pointer or NULL if none was set"]
     #[doc = " @see libinput_device_group_set_user_data"]
-    pub fn libinput_device_group_get_user_data(group: *mut libinput_device_group) -> *mut ::libc::c_void;
+    pub fn libinput_device_group_get_user_data(
+        group: *mut libinput_device_group,
+    ) -> *mut ::libc::c_void;
 }
 #[doc = "< Config applied successfully"]
 pub const libinput_config_status_LIBINPUT_CONFIG_STATUS_SUCCESS: libinput_config_status = 0;
@@ -3936,7 +4033,9 @@ extern "C" {
     #[doc = " @see libinput_device_config_tap_set_enabled"]
     #[doc = " @see libinput_device_config_tap_get_enabled"]
     #[doc = " @see libinput_device_config_tap_get_default_enabled"]
-    pub fn libinput_device_config_tap_get_finger_count(device: *mut libinput_device) -> ::libc::c_int;
+    pub fn libinput_device_config_tap_get_finger_count(
+        device: *mut libinput_device,
+    ) -> ::libc::c_int;
 }
 extern "C" {
     #[doc = " @ingroup config"]
@@ -3977,7 +4076,9 @@ extern "C" {
     #[doc = " @see libinput_device_config_tap_get_finger_count"]
     #[doc = " @see libinput_device_config_tap_set_enabled"]
     #[doc = " @see libinput_device_config_tap_get_default_enabled"]
-    pub fn libinput_device_config_tap_get_enabled(device: *mut libinput_device) -> libinput_config_tap_state;
+    pub fn libinput_device_config_tap_get_enabled(
+        device: *mut libinput_device,
+    ) -> libinput_config_tap_state;
 }
 extern "C" {
     #[doc = " @ingroup config"]
@@ -3997,9 +4098,11 @@ extern "C" {
     ) -> libinput_config_tap_state;
 }
 #[doc = " 1/2/3 finger tap maps to left/right/middle"]
-pub const libinput_config_tap_button_map_LIBINPUT_CONFIG_TAP_MAP_LRM: libinput_config_tap_button_map = 0;
+pub const libinput_config_tap_button_map_LIBINPUT_CONFIG_TAP_MAP_LRM:
+    libinput_config_tap_button_map = 0;
 #[doc = " 1/2/3 finger tap maps to left/middle/right"]
-pub const libinput_config_tap_button_map_LIBINPUT_CONFIG_TAP_MAP_LMR: libinput_config_tap_button_map = 1;
+pub const libinput_config_tap_button_map_LIBINPUT_CONFIG_TAP_MAP_LMR:
+    libinput_config_tap_button_map = 1;
 #[doc = " @ingroup config"]
 #[doc = ""]
 #[doc = " @since 1.5"]
@@ -4160,8 +4263,8 @@ extern "C" {
 pub const libinput_config_drag_lock_state_LIBINPUT_CONFIG_DRAG_LOCK_DISABLED:
     libinput_config_drag_lock_state = 0;
 #[doc = " Drag lock is to be enabled, or is currently disabled"]
-pub const libinput_config_drag_lock_state_LIBINPUT_CONFIG_DRAG_LOCK_ENABLED: libinput_config_drag_lock_state =
-    1;
+pub const libinput_config_drag_lock_state_LIBINPUT_CONFIG_DRAG_LOCK_ENABLED:
+    libinput_config_drag_lock_state = 1;
 #[doc = " @ingroup config"]
 pub type libinput_config_drag_lock_state = ::libc::c_uint;
 extern "C" {
@@ -4244,7 +4347,9 @@ extern "C" {
     #[doc = " @see libinput_device_config_calibration_set_matrix"]
     #[doc = " @see libinput_device_config_calibration_get_matrix"]
     #[doc = " @see libinput_device_config_calibration_get_default_matrix"]
-    pub fn libinput_device_config_calibration_has_matrix(device: *mut libinput_device) -> ::libc::c_int;
+    pub fn libinput_device_config_calibration_has_matrix(
+        device: *mut libinput_device,
+    ) -> ::libc::c_int;
 }
 extern "C" {
     #[doc = " @ingroup config"]
@@ -4364,8 +4469,7 @@ pub const libinput_config_send_events_mode_LIBINPUT_CONFIG_SEND_EVENTS_DISABLED:
 #[doc = " If an external pointer device is plugged in, do not send events"]
 #[doc = " from this device. This option may be available on built-in"]
 #[doc = " touchpads."]
-pub const libinput_config_send_events_mode_LIBINPUT_CONFIG_SEND_EVENTS_DISABLED_ON_EXTERNAL_MOUSE:
-    libinput_config_send_events_mode = 2;
+pub const libinput_config_send_events_mode_LIBINPUT_CONFIG_SEND_EVENTS_DISABLED_ON_EXTERNAL_MOUSE : libinput_config_send_events_mode = 2 ;
 #[doc = " @ingroup config"]
 #[doc = ""]
 #[doc = " The send-event mode of a device defines when a device may generate events"]
@@ -4450,7 +4554,8 @@ extern "C" {
     #[doc = " @see libinput_device_config_send_events_get_modes"]
     #[doc = " @see libinput_device_config_send_events_set_mode"]
     #[doc = " @see libinput_device_config_send_events_get_mode"]
-    pub fn libinput_device_config_send_events_get_default_mode(device: *mut libinput_device) -> u32;
+    pub fn libinput_device_config_send_events_get_default_mode(device: *mut libinput_device)
+        -> u32;
 }
 extern "C" {
     #[doc = " @ingroup config"]
@@ -4464,7 +4569,8 @@ extern "C" {
     #[doc = " @see libinput_device_config_accel_set_speed"]
     #[doc = " @see libinput_device_config_accel_get_speed"]
     #[doc = " @see libinput_device_config_accel_get_default_speed"]
-    pub fn libinput_device_config_accel_is_available(device: *mut libinput_device) -> ::libc::c_int;
+    pub fn libinput_device_config_accel_is_available(device: *mut libinput_device)
+        -> ::libc::c_int;
 }
 extern "C" {
     #[doc = " @ingroup config"]
@@ -4523,13 +4629,15 @@ extern "C" {
 }
 #[doc = " Placeholder for devices that don't have a configurable pointer"]
 #[doc = " acceleration profile."]
-pub const libinput_config_accel_profile_LIBINPUT_CONFIG_ACCEL_PROFILE_NONE: libinput_config_accel_profile = 0;
+pub const libinput_config_accel_profile_LIBINPUT_CONFIG_ACCEL_PROFILE_NONE:
+    libinput_config_accel_profile = 0;
 #[doc = " A flat acceleration profile. Pointer motion is accelerated by a"]
 #[doc = " constant (device-specific) factor, depending on the current"]
 #[doc = " speed."]
 #[doc = ""]
 #[doc = " @see libinput_device_config_accel_set_speed"]
-pub const libinput_config_accel_profile_LIBINPUT_CONFIG_ACCEL_PROFILE_FLAT: libinput_config_accel_profile = 1;
+pub const libinput_config_accel_profile_LIBINPUT_CONFIG_ACCEL_PROFILE_FLAT:
+    libinput_config_accel_profile = 1;
 #[doc = " An adaptive acceleration profile. Pointer acceleration depends"]
 #[doc = " on the input speed. This is the default profile for most devices."]
 pub const libinput_config_accel_profile_LIBINPUT_CONFIG_ACCEL_PROFILE_ADAPTIVE:
@@ -4624,7 +4732,9 @@ extern "C" {
     #[doc = " @see libinput_device_config_scroll_set_natural_scroll_enabled"]
     #[doc = " @see libinput_device_config_scroll_get_natural_scroll_enabled"]
     #[doc = " @see libinput_device_config_scroll_get_default_natural_scroll_enabled"]
-    pub fn libinput_device_config_scroll_has_natural_scroll(device: *mut libinput_device) -> ::libc::c_int;
+    pub fn libinput_device_config_scroll_has_natural_scroll(
+        device: *mut libinput_device,
+    ) -> ::libc::c_int;
 }
 extern "C" {
     #[doc = " @ingroup config"]
@@ -4688,7 +4798,9 @@ extern "C" {
     #[doc = " @see libinput_device_config_left_handed_set"]
     #[doc = " @see libinput_device_config_left_handed_get"]
     #[doc = " @see libinput_device_config_left_handed_get_default"]
-    pub fn libinput_device_config_left_handed_is_available(device: *mut libinput_device) -> ::libc::c_int;
+    pub fn libinput_device_config_left_handed_is_available(
+        device: *mut libinput_device,
+    ) -> ::libc::c_int;
 }
 extern "C" {
     #[doc = " @ingroup config"]
@@ -4743,11 +4855,14 @@ extern "C" {
     #[doc = " @see libinput_device_config_left_handed_is_available"]
     #[doc = " @see libinput_device_config_left_handed_set"]
     #[doc = " @see libinput_device_config_left_handed_get"]
-    pub fn libinput_device_config_left_handed_get_default(device: *mut libinput_device) -> ::libc::c_int;
+    pub fn libinput_device_config_left_handed_get_default(
+        device: *mut libinput_device,
+    ) -> ::libc::c_int;
 }
 #[doc = " Do not send software-emulated button events. This has no effect"]
 #[doc = " on events generated by physical buttons."]
-pub const libinput_config_click_method_LIBINPUT_CONFIG_CLICK_METHOD_NONE: libinput_config_click_method = 0;
+pub const libinput_config_click_method_LIBINPUT_CONFIG_CLICK_METHOD_NONE:
+    libinput_config_click_method = 0;
 #[doc = " Use software-button areas to generate button events."]
 pub const libinput_config_click_method_LIBINPUT_CONFIG_CLICK_METHOD_BUTTON_AREAS:
     libinput_config_click_method = 1;
@@ -4950,17 +5065,20 @@ extern "C" {
 }
 #[doc = " Never send scroll events instead of pointer motion events."]
 #[doc = " This has no effect on events generated by scroll wheels."]
-pub const libinput_config_scroll_method_LIBINPUT_CONFIG_SCROLL_NO_SCROLL: libinput_config_scroll_method = 0;
+pub const libinput_config_scroll_method_LIBINPUT_CONFIG_SCROLL_NO_SCROLL:
+    libinput_config_scroll_method = 0;
 #[doc = " Send scroll events when two fingers are logically down on the"]
 #[doc = " device."]
-pub const libinput_config_scroll_method_LIBINPUT_CONFIG_SCROLL_2FG: libinput_config_scroll_method = 1;
+pub const libinput_config_scroll_method_LIBINPUT_CONFIG_SCROLL_2FG: libinput_config_scroll_method =
+    1;
 #[doc = " Send scroll events when a finger moves along the bottom or"]
 #[doc = " right edge of a device."]
-pub const libinput_config_scroll_method_LIBINPUT_CONFIG_SCROLL_EDGE: libinput_config_scroll_method = 2;
+pub const libinput_config_scroll_method_LIBINPUT_CONFIG_SCROLL_EDGE: libinput_config_scroll_method =
+    2;
 #[doc = " Send scroll events when a button is down and the device moves"]
 #[doc = " along a scroll-capable axis."]
-pub const libinput_config_scroll_method_LIBINPUT_CONFIG_SCROLL_ON_BUTTON_DOWN: libinput_config_scroll_method =
-    4;
+pub const libinput_config_scroll_method_LIBINPUT_CONFIG_SCROLL_ON_BUTTON_DOWN:
+    libinput_config_scroll_method = 4;
 #[doc = " @ingroup config"]
 #[doc = ""]
 #[doc = " The scroll method of a device selects when to generate scroll axis events"]
@@ -5271,7 +5389,9 @@ extern "C" {
     #[doc = " @see libinput_device_config_dwt_is_available"]
     #[doc = " @see libinput_device_config_dwt_set_enabled"]
     #[doc = " @see libinput_device_config_dwt_get_default_enabled"]
-    pub fn libinput_device_config_dwt_get_enabled(device: *mut libinput_device) -> libinput_config_dwt_state;
+    pub fn libinput_device_config_dwt_get_enabled(
+        device: *mut libinput_device,
+    ) -> libinput_config_dwt_state;
 }
 extern "C" {
     #[doc = " @ingroup config"]
@@ -5304,7 +5424,9 @@ extern "C" {
     #[doc = " @see libinput_device_config_rotation_get_default_angle"]
     #[doc = ""]
     #[doc = " @since 1.4"]
-    pub fn libinput_device_config_rotation_is_available(device: *mut libinput_device) -> ::libc::c_int;
+    pub fn libinput_device_config_rotation_is_available(
+        device: *mut libinput_device,
+    ) -> ::libc::c_int;
 }
 extern "C" {
     #[doc = " @ingroup config"]
@@ -5357,7 +5479,9 @@ extern "C" {
     #[doc = " @see libinput_device_config_rotation_get_default_angle"]
     #[doc = ""]
     #[doc = " @since 1.4"]
-    pub fn libinput_device_config_rotation_get_angle(device: *mut libinput_device) -> ::libc::c_uint;
+    pub fn libinput_device_config_rotation_get_angle(
+        device: *mut libinput_device,
+    ) -> ::libc::c_uint;
 }
 extern "C" {
     #[doc = " @ingroup config"]
@@ -5374,7 +5498,9 @@ extern "C" {
     #[doc = " @see libinput_device_config_rotation_get_angle"]
     #[doc = ""]
     #[doc = " @since 1.4"]
-    pub fn libinput_device_config_rotation_get_default_angle(device: *mut libinput_device) -> ::libc::c_uint;
+    pub fn libinput_device_config_rotation_get_default_angle(
+        device: *mut libinput_device,
+    ) -> ::libc::c_uint;
 }
 pub type __builtin_va_list = [__va_list_tag; 1usize];
 #[repr(C)]
